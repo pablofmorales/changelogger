@@ -14,4 +14,12 @@ Every Artifcatory is packed with a CHANGELOG created after execute this command
 With this simple script you should be able to track every event in your application, in my case a run the command into the develop's branch.
 
 
+== Installation == 
+
+I like to access to my scripts in every place. 
+
+$ cp -R changelogger /usr/local/bin/changelogger
+
+$ chmod a+x /usr/local/bin/changelogger
+
 
