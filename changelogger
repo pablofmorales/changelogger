@@ -1,0 +1,31 @@
+#!/usr/bin/php
+<?php
+
+exec('git pull origin ');
+exec('git log --pretty=format:"%h | %an | %cd | %s" --date=short', $buffer);
+
+define('GIT_TITLE', 3);
+define('GIT_DATE', 2);
+define('GIT_AUTHOR', 1);
+define('GIT_HASH', 0);
+
+$date = null;
+$content = 'ChangeLog';
+foreach ($buffer as $commit) {
+    $row = explode('|', $commit);
+
+    if (strpos( $row[GIT_TITLE], 'Merge pull request' ) === 1) {
+        continue;
+    }
+
+    if ($date != $row[GIT_DATE]) {
+        $date = $row[GIT_DATE];
+        
+        $content .= "\xA----------\xA";
+        $content .= trim($date) . "\xA";
+    }
+
+    $content .= "\t" . trim($row[GIT_HASH]) . ' ' . trim($row[GIT_TITLE]) . ' ('. trim($row[GIT_AUTHOR]) . ") \n";
+}
+echo $content;
+
