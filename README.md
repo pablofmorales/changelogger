@@ -1,4 +1,4 @@
-=== Changelogger ===
+## Changelogger 
 
 
 I always dream in a way to mantain my changelog up to date. That's why I decide yo create this simple scripts.
@@ -14,7 +14,7 @@ Every Artifcatory is packed with a CHANGELOG created after execute this command
 With this simple script you should be able to track every event in your application, in my case a run the command into the develop's branch.
 
 
-== Installation == 
+### Installation
 
 I like to access to my scripts in every place. 
 
