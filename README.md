@@ -18,8 +18,8 @@ With this simple script you should be able to track every event in your applicat
 
 I like to access to my scripts in every place. 
 
-$ cp -R changelogger /usr/local/bin/changelogger
+    $ cp -R changelogger /usr/local/bin/changelogger
 
-$ chmod a+x /usr/local/bin/changelogger
+    $ chmod a+x /usr/local/bin/changelogger
 
 
