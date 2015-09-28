@@ -8,10 +8,12 @@ define('GIT_TITLE', 3);
 define('GIT_DATE', 2);
 define('GIT_AUTHOR', 1);
 define('GIT_HASH', 0);
+define('MAX_LOG', 100);
 
 $date = null;
 $content = 'ChangeLog';
-foreach ($buffer as $commit) {
+for ($i = 0; $i<= MAX_LOG; $i++) {
+    $commit = $buffer[$i];
     $row = explode('|', $commit);
 
     if (strpos( $row[GIT_TITLE], 'Merge pull request' ) === 1) {
@@ -28,4 +30,3 @@ foreach ($buffer as $commit) {
     $content .= "\t" . trim($row[GIT_HASH]) . ' ' . trim($row[GIT_TITLE]) . ' ('. trim($row[GIT_AUTHOR]) . ") \n";
 }
 echo $content;
-
